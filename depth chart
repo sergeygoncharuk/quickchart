@@ -1,0 +1,233 @@
+
+
+{
+  type: 'bar',
+  data: {
+    labels: [''],
+    datasets: [
+      {
+        label: 'Part 1',
+        data: [1],
+        backgroundColor: '#3d99d2',// green
+      },
+      {
+        label: 'Part 2',
+        data: [1],
+        backgroundColor: '#3d99d2',// green
+      },
+      {
+        label: 'Part 3',
+        data: [1],
+        backgroundColor: '#5cc9e8',// yellow
+      },
+      {
+        label: 'Part 4',
+        data: [1],
+        backgroundColor: '#d1f5ff',// red
+      },
+      {
+        label: 'Part 5',
+        data: [1],
+        backgroundColor: '#d1f5ff',// red
+      },
+      {
+        label: 'Part 6',
+        data: [1],
+        backgroundColor: '#d1f5ff',// red
+      },
+      {
+        label: 'Part 7',
+        data: [1],
+        backgroundColor: '#d1f5ff',// red
+      },
+      {
+        label: 'Part 8',
+        data: [1],
+        backgroundColor: '#d1f5ff',// red
+      },
+      {
+        label: 'Part 9',
+        data: [1],
+        backgroundColor: '#d1f5ff',// red
+      },
+      {
+        label: 'Part 10',
+        data: [1],
+        backgroundColor: '#d1f5ff',// red
+      },
+      {
+        label: 'Part 11',
+        data: [1],
+        backgroundColor: '#5cc9e8',// yellow
+      },
+      {
+        label: 'Part 12',
+        data: [1],
+        backgroundColor: '#3d99d2',// green
+      },
+      {
+        label: 'Part 13',
+        data: [1],
+        backgroundColor: '#3d99d2',// green
+      },
+      {
+        label: 'Part 14',
+        data: [1],
+        backgroundColor: '#3d99d2',// green
+      },
+      {
+        label: 'Part 15',
+        data: [1],
+        backgroundColor: '#5cc9e8',// yellow
+      },
+
+      {
+        label: 'Part 16',
+        data: [1],
+        backgroundColor: '#d1f5ff',// red
+      },
+      {
+        label: 'Part 17',
+        data: [1],
+        backgroundColor: '#d1f5ff',// red
+      },
+      {
+        label: 'Part 18',
+        data: [1],
+        backgroundColor: '#d1f5ff',// red
+      },
+      {
+        label: 'Part 19',
+        data: [1],
+        backgroundColor: '#d1f5ff',// red
+      },
+      {
+        label: 'Part 20',
+        data: [1],
+        backgroundColor: '#d1f5ff',// red
+      },
+      {
+        label: 'Part 21',
+        data: [1],
+        backgroundColor: '#d1f5ff',// red
+      },
+      {
+        label: 'Part 22',
+        data: [1],
+        backgroundColor: '#d1f5ff',// red
+      },
+      {
+        label: 'Part 23',
+        data: [1],
+        backgroundColor: '#5cc9e8',// yellow
+      },
+      {
+        label: 'Part 24',
+        data: [1],
+        backgroundColor: '#3d99d2',// green
+      },
+
+
+    ],
+  },
+  options: {
+    indexAxis: 'y',
+    layout: {
+      padding: 40,
+    },
+    scales: {
+      x: {
+        stacked: true,
+        ticks: {
+          display: true,
+          stepSize: 1,
+          minRotation: 0, // ⬅️ rotate labels vertically
+          maxRotation: 0,
+        },
+        grid: {
+          drawBorder: false,
+          display: false,
+        },
+      },
+      y: {
+        display: false,
+        stacked: true,
+      },
+    },
+    plugins: {
+      legend: {
+        display: false,
+      },
+      annotation: {
+        clip: false,
+        annotations: {
+          
+          
+          arrow: {
+            type: 'point',
+            pointStyle: 'triangle',
+            backgroundColor: 'red',
+            borderColor: 'white',
+            borderWidth: 2,
+            radius: 7,
+            xValue: 7,
+            yAdjust: 25,
+            rotation: 180,
+          },
+          label1: {
+            type: 'label',
+            xValue: 7,
+            yAdjust: -10,
+            content: ['7:30\n1.32 m'],
+            font: {
+              size: 12,
+              weight: 'bold',
+            },
+          },
+          verticalLine: {
+            type: 'line',
+            xMin: 7,
+            xMax: 7,
+            borderColor: 'red',
+            borderWidth: 1,
+            borderDash: [4, 4],
+          },
+          
+          
+/*           arrow2: {
+            type: 'point',
+         //   pointStyle: 'triangle',
+            backgroundColor: 'red',
+            borderColor: 'white',
+            borderWidth: 3,
+            radius: 5,
+            xValue: 10.5,
+            yAdjust: 45,
+            rotation: 180,
+          },
+*/          label2: {
+            type: 'label',
+            xValue: 10.5,
+            yAdjust: 100,
+            content: ['10:26\n5.00 m'],
+            font: {
+              size: 12,
+            //  weight: 'bold',
+            },
+          },
+          verticalLine2: {
+            type: 'line',
+            xMin: 10.5,
+            xMax: 10.5,
+            borderColor: 'blue',
+            borderWidth: 1,
+            borderDash: [4, 4],
+          },         
+          
+          
+          
+        },
+      },
+    },
+  },
+}
