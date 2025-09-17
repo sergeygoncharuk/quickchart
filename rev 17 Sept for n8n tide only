@@ -1,0 +1,253 @@
+{
+  
+  
+// N8N VARIABLES
+// array000Tide
+// now000Tide
+// now000Hour
+// now000HourDecimal
+// now000Date (format 10 Sep 2025)
+
+// peaks data tideHours 0.00, tide, time
+// nowTide tideHour 0.00, nowTide, nowTime
+// tide MIN 0.20 MAX 5.53
+  
+  type: 'line',
+  data: {
+    labels: Array.from({length:24}, (_,i)=>i),
+    datasets: [
+
+/*
+{ // BLUE DOTS TIDE PEAKS HIGH/LOW
+  label: 'High/Low Peaks',
+  type: 'scatter',
+  data: [
+    { x: 0.62,  y: 4.48, label: '4.48 m\n00:37' },
+    { x: 7.22,  y: 1.57, label: '1.57 m\n07:13' },
+    { x: 13.06, y: 4.20, label: '4.20 m\n13:03' },
+    { x: 19.37, y: 1.71, label: '1.71 m\n19:22' }
+  ],
+  backgroundColor: 'rgb(54, 162, 235)',
+  borderColor: 'white',
+  borderWidth: 2,
+  pointRadius: 12,
+  pointStyle: 'circle',
+  showLine: false,
+  datalabels: {
+    align: 'top',
+    anchor: 'end',
+    offset: 20,             // 👈 move label 10 pixels up
+    font: { size: 48, weight: 'normal' },
+    color: "rgba(61,153,209,1.0)",
+    backgroundColor: 'transparent',  
+    borderColor: 'transparent', 
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 6,
+    offset: 10,
+    formatter: function(value) {
+      return value.label ? value.label.split('\n') : '';
+    }
+  }
+},
+
+*/
+
+{ // RED DOT TIDE NOW
+  label: 'Tide now red dot',
+  type: 'scatter',
+  data: [
+    
+// VARIABLES
+// now000Tide
+// now000HourDecimal 
+//  { x: now000HourDecimal, y: now000Tide,}
+//  { x: nowHourDecimal, y: nowTide,}
+    { x: 6.25, y: 1.73, /*label: '1.73 m\n06:15'*/ }
+  ],
+  backgroundColor: 'red',
+  borderColor: 'white',
+  borderWidth: 4,
+  pointRadius: 14,
+  pointStyle: 'circle',
+  showLine: false,
+},
+
+// BLUE LINE AND WAVE TIDE
+      { 
+        type: 'line',
+        label: 'Tide',
+        borderColor: 'rgb(54, 162, 235)',
+        borderWidth: 3,
+        fill: true,
+// VARIABLE        
+// array000Tide
+//        data: [array000Tide],
+//        data: [arrayTide], 
+        data: [4.44,4.48,4.18,3.65,2.99,2.33,1.83,1.57,1.67,2.17,2.86,3.50,4.00,4.20,4.04,3.60,3.04,2.45,1.98,1.71,1.75,2.19,2.86,3.53],
+        backgroundColor: getGradientFillHelper('vertical', ["rgba(61,153,209,1.0)", "rgba(61,153,209,0.9)", "rgba(247,251,253,0.5)"]),
+        pointRadius: 0,
+        tension: 0.4
+      },
+      
+      
+// VERTICAL BARS EACH HOUR LIGHT-GREY
+      {
+        type: 'bar',
+        label: 'Hourly Bars',
+  data: [
+    {x: 0.5, y: 7}, {x: 1.5, y: 0}, {x: 2.5, y: 7}, {x: 3.5, y: 0},
+    {x: 4.5, y: 7}, {x: 5.5, y: 0}, {x: 6.5, y: 7}, {x: 7.5, y: 0},
+    {x: 8.5, y: 7}, {x: 9.5, y: 0}, {x:10.5, y: 7}, {x:11.5, y: 0},
+    {x:12.5, y: 7}, {x:13.5, y: 0}, {x:14.5, y: 7}, {x:15.5, y: 0},
+    {x:16.5, y: 7}, {x:17.5, y: 0}, {x:18.5, y: 7}, {x:19.5, y: 0},
+    {x:20.5, y: 7}, {x:21.5, y: 0}, {x:22.5, y: 7}
+  ],
+  backgroundColor: 'rgba(200,200,200,0.2',
+        borderColor: 'rgba(200,200,200,0.2',
+        borderWidth: 0,
+        barPercentage: 1,
+        categoryPercentage: 1.0,
+        order: 0   // ensure bars render behind scatter & line if needed
+      }
+
+    ]
+  },
+  options: {
+    scales: {
+      x: {
+    type: 'linear',   // 👈 linear axis for fractional x
+    min: 0,
+    max: 23,
+       offset: false,           // 👈 remove extra space before first and after last tick      
+        ticks: {
+          stepSize: 1,       // show every integer tick
+          autoSkip: false,
+          maxRotation: 0,
+          minRotation: 0,
+          font: { size: 32 }   // 👈 set x-axis tick font size
+        },
+    grid: {
+      display: false   // 👈 hide vertical gridlines
+    }        
+      },
+      y: {
+        beginAtZero: true,
+        max: 7,
+          ticks: {
+          callback: function(value) { return value.toFixed(0) + ' m'; },
+          font: { size: 32 }   // 👈 set y-axis tick font size
+        }
+      }
+    },
+    plugins: {
+      title: { // TITLES
+        display: true,
+// VARIABLES /////////////////////////////////
+// now000Date
+//       text: 'Tide in TARESSA - now000Date',
+//       text: 'Tide in TARESSA - nowDate',
+        text: 'TIDE in TARESSA - 10 Sep',
+        font: { size: 64, weight: 'normal' },
+        color: 'grey',
+        padding: { top: 10, bottom: 20 }
+      },
+/*       subtitle: {
+        display: true,
+// VARIABLES /////////////////////////////////
+// now000Date
+//       text: 'now000Date',
+//       text: 'nowDate',
+       text: '10 Sep',
+        font: { size: 48, weight: 'normal' },
+        color: 'grey',
+        padding: { top: -10, bottom: 10 }
+      },
+*/
+      legend: {
+        position: 'bottom',
+        labels: {
+          filter: function(item) { return item.text !== 'Tide'; },
+          filter: function(item) { return item.text !== 'Tide now red dot'; },
+          filter: function(item) { return item.text !== 'Hourly Bars'; },          
+          filter: function(item) { return item.text !== 'High/Low Peaks'; }         
+        }
+      },
+      annotation: {
+        annotations: {
+    
+// RED DOTTED LINE TIDE NOW - HORIZONTAL
+          lineToDotHorizontal: { 
+            type: 'line',
+// VARIABLES /////////////////////////////////
+// now000Tide
+// now000HourDecimal 
+//          xMin: 0, xMax: now000HourDecimaL,
+//          xMin: 0, xMax: nowHourDecimaL,
+            xMin: 0, xMax: 6.25,
+// VARIABLES /////////////////////////////////
+//         yMin: now000Tide, yMax: now000Tide,   
+//         yMin: nowTide, yMax: nowTide,
+            yMin: 1.73, yMax: 1.73,
+            borderColor: 'red',
+            borderWidth: 2,
+            borderDash: [10, 10]
+          }, 
+
+// RED DOTTED LINE TIDE NOW - VERTICAL
+lineToDotVertical: { 
+  type: 'line',
+// VARIABLES /////////////////////////////////
+// now000Tide
+// now000HourDecimal 
+// xMin: now000HourDecimal,
+// xMin: nowHourDecimal,
+   xMin: 6.25,
+// VARIABLES /////////////////////////////////
+// xMax: now000HourDecimal,
+// xMax: nowHourDecimal,  
+  xMax: 6.25,
+  yMin: 0,
+  yMax: 7.0,
+  borderColor: 'red',
+  borderWidth: 2,
+  borderDash: [10, 10],
+  
+label: {
+  enabled: true,
+//  align: 'center',
+// VARIABLES /////////////////////////////////
+// now000Tide
+// now000Hour
+//   content: 'now000Tide m\n now000Hour',
+//   content: 'nowTide m\n nowHour',
+  content: '1.73 m\n 06:15',
+  position: 'start',
+  backgroundColor: 'white',
+  borderColor: 'red',
+  borderWidth: 1,       // slightly thicker for visibility
+  borderRadius: 10,      // rounded corners
+  color: 'red',
+  font: { size: 48, weight: 'normal' },
+  padding: { top: 10, bottom: 60, left: 10, right: 10 }, // ensure enough space for both lines
+  yAdjust: -570
+}
+},
+
+        }
+      },
+      
+      
+      datalabels: {
+        align: 'top',
+        anchor: 'end',
+        font: { size: 14, weight: 'bold' },
+        color: 'blue',
+        formatter: function(value) {
+          return value.label || '';
+        }
+      }
+    }
+  },
+  plugins: ["chartjs-plugin-annotation", "chartjs-plugin-datalabels"]
+}
