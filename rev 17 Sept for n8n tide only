@@ -8,6 +8,13 @@
 // now000DecimalHour
 // now000Date (format 10 Sep 2025)
 
+// TEST
+// arrayTide
+// nowTide
+// nowHour
+// nowDecimalHour
+// nowDate
+
 // peaks data tideHours 0.00, tide, time
 // nowTide tideHour 0.00, nowTide, nowTime
 // tide MIN 0.20 MAX 5.53
