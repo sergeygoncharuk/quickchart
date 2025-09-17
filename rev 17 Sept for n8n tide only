@@ -5,7 +5,7 @@
 // array000Tide
 // now000Tide
 // now000Hour
-// now000HourDecimal
+// now000DecimalHour
 // now000Date (format 10 Sep 2025)
 
 // peaks data tideHours 0.00, tide, time
@@ -60,9 +60,9 @@
     
 // VARIABLES
 // now000Tide
-// now000HourDecimal 
-//  { x: now000HourDecimal, y: now000Tide,}
-//  { x: nowHourDecimal, y: nowTide,}
+// now000DecimalHour
+//  { x: now000DecimalHour, y: now000Tide,}
+//  { x: nowDecimalHour, y: nowTide,}
     { x: 6.25, y: 1.73, /*label: '1.73 m\n06:15'*/ }
   ],
   backgroundColor: 'red',
@@ -181,9 +181,9 @@
             type: 'line',
 // VARIABLES /////////////////////////////////
 // now000Tide
-// now000HourDecimal 
-//          xMin: 0, xMax: now000HourDecimaL,
-//          xMin: 0, xMax: nowHourDecimaL,
+// now000DecimalHour 
+//          xMin: 0, xMax: now000DecimalHour,
+//          xMin: 0, xMax: nowDecimalHour,
             xMin: 0, xMax: 6.25,
 // VARIABLES /////////////////////////////////
 //         yMin: now000Tide, yMax: now000Tide,   
@@ -199,13 +199,13 @@ lineToDotVertical: {
   type: 'line',
 // VARIABLES /////////////////////////////////
 // now000Tide
-// now000HourDecimal 
-// xMin: now000HourDecimal,
-// xMin: nowHourDecimal,
+// now000DecimalHour 
+// xMin: now000DecimalHour,
+// xMin: nowDecimalHour,
    xMin: 6.25,
 // VARIABLES /////////////////////////////////
-// xMax: now000HourDecimal,
-// xMax: nowHourDecimal,  
+// xMax: now000DecimalHour,
+// xMax: nowDecimalHour,  
   xMax: 6.25,
   yMin: 0,
   yMax: 7.0,
