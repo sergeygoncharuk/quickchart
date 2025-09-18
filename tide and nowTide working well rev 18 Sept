@@ -6,7 +6,7 @@
 // now000Tide
 // now000Hour
 // now000DecimalHour
-// now000Date (format 10 Sep 2025)
+// now000DateMonthYear
 // now000Time
 // tide000NowExact
 
@@ -15,7 +15,7 @@
 // nowTide
 // nowHour
 // nowDecimalHour
-// nowDate
+// nowDateMonthYear
 // nowTime
 // tideNowExact
 
@@ -155,27 +155,23 @@
     plugins: {
       title: { // TITLES
         display: true,
-// VARIABLES /////////////////////////////////
-// now000Date
-//       text: 'TARESSA - tide now000Date',
-       text: 'TARESSA - tide nowDate',
-//        text: 'TARESSA - tide 10 Sep',
+        text: 'Tide in TARESSA',
         font: { size: 64, weight: 'normal' },
         color: 'grey',
         padding: { top: 10, bottom: 20 }
       },
-/*       subtitle: {
+       subtitle: {
         display: true,
 // VARIABLES /////////////////////////////////
-// now000Date
-//       text: 'now000Date',
-       text: 'nowDate',
+// now000DateMonthYear
+//       text: 'now000DateMonthYear',
+       text: 'nowDateMonthYear',
 //       text: '10 Sep',
         font: { size: 48, weight: 'normal' },
         color: 'grey',
         padding: { top: -10, bottom: 10 }
       },
-*/
+
       legend: {
         position: 'bottom',
         labels: {
