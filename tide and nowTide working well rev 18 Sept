@@ -155,8 +155,8 @@
 // VARIABLES /////////////////////////////////
 // now000Date
 //       text: 'TARESSA - tide now000Date',
-       text: 'Tide in TARESSA - nowDate',
-//        text: 'TIDE in TARESSA - 10 Sep',
+       text: 'TARESSA - tide nowDate',
+//        text: 'TARESSA - tide 10 Sep',
         font: { size: 64, weight: 'normal' },
         color: 'grey',
         padding: { top: 10, bottom: 20 }
