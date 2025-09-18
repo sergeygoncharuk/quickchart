@@ -242,7 +242,7 @@ label: {
   color: 'red',
   font: { size: 48, weight: 'normal' },
   padding: { top: 10, bottom: 60, left: 10, right: 10 }, // ensure enough space for both lines
-  yAdjust: -650
+  yAdjust: -630
 }
 },
 
