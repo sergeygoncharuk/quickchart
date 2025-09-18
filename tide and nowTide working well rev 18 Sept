@@ -192,14 +192,14 @@
           lineToDotHorizontal: { 
             type: 'line',
 // VARIABLES /////////////////////////////////
-// now000Tide
 // now000DecimalHour 
 //          xMin: 0, xMax: now000DecimalHour,
           xMin: 0, xMax: nowDecimalHour,
 //            xMin: 0, xMax: 6.25,
 // VARIABLES /////////////////////////////////
-//         yMin: now000Tide, yMax: now000Tide,   
-         yMin: nowTide, yMax: nowTide,
+// tide000NowExact
+//         yMin: tide000NowExact, yMax: tide000NowExact,   
+         yMin: tideNowExact, yMax: tideNowExact,
 //            yMin: 1.73, yMax: 1.73,
             borderColor: 'red',
             borderWidth: 2,
