@@ -9,6 +9,7 @@
 // now000DateMonthYear
 // now000Time
 // tide000NowExact
+// tide000PeaksString
 
 // TEST
 // arrayTide
@@ -18,6 +19,7 @@
 // nowDateMonthYear
 // nowTime
 // tideNowExact
+// tidePeaksString
 
 // peaks data tideHours 0.00, tide, time
 // nowTide tideHour 0.00, nowTide, nowTime
@@ -28,16 +30,28 @@
     labels: Array.from({length:24}, (_,i)=>i),
     datasets: [
 
-/*
+
 { // BLUE DOTS TIDE PEAKS HIGH/LOW
   label: 'High/Low Peaks',
   type: 'scatter',
-  data: [
+// VARIABLES /////////////////////////////////
+// tide000PeaksString
+/*  
+    data: [
+    tide000PeaksString
+  ],
+*/
+    data: [
+    tidePeaksString
+  ],
+/*
+    data: [
     { x: 0.62,  y: 4.48, label: '4.48 m\n00:37' },
     { x: 7.22,  y: 1.57, label: '1.57 m\n07:13' },
     { x: 13.06, y: 4.20, label: '4.20 m\n13:03' },
     { x: 19.37, y: 1.71, label: '1.71 m\n19:22' }
   ],
+*/
   backgroundColor: 'rgb(54, 162, 235)',
   borderColor: 'white',
   borderWidth: 2,
@@ -48,8 +62,8 @@
     align: 'top',
     anchor: 'end',
     offset: 20,             // 👈 move label 10 pixels up
-    font: { size: 48, weight: 'normal' },
-    color: "rgba(61,153,209,1.0)",
+    font: { size: 32, weight: 'normal' },
+    color: "grey",  // "rgba(61,153,209,1.0)",
     backgroundColor: 'transparent',  
     borderColor: 'transparent', 
     borderWidth: 1,
@@ -62,14 +76,14 @@
   }
 },
 
-*/
+
 
 { // RED DOT TIDE NOW
   label: 'Tide now red dot',
   type: 'scatter',
   data: [
     
-// VARIABLES
+// VARIABLES /////////////////////////////////
 // now000Tide
 // now000DecimalHour
 // tide000NowExact
@@ -92,7 +106,7 @@
         borderColor: 'rgb(54, 162, 235)',
         borderWidth: 3,
         fill: true,
-// VARIABLE        
+// VARIABLES /////////////////////////////////     
 // array000Tide
 //        data: [array000Tide],
         data: arrayTide, 
