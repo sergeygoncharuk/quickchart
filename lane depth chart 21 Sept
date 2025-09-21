@@ -1,147 +1,48 @@
-
-
 {
   type: 'bar',
   data: {
     labels: [''],
     datasets: [
-      {
-        label: 'Part 1',
-        data: [1],
-        backgroundColor: '#3d99d2',// green
-      },
-      {
-        label: 'Part 2',
-        data: [1],
-        backgroundColor: '#3d99d2',// green
-      },
-      {
-        label: 'Part 3',
-        data: [1],
-        backgroundColor: '#5cc9e8',// yellow
-      },
-      {
-        label: 'Part 4',
-        data: [1],
-        backgroundColor: '#d1f5ff',// red
-      },
-      {
-        label: 'Part 5',
-        data: [1],
-        backgroundColor: '#d1f5ff',// red
-      },
-      {
-        label: 'Part 6',
-        data: [1],
-        backgroundColor: '#d1f5ff',// red
-      },
-      {
-        label: 'Part 7',
-        data: [1],
-        backgroundColor: '#d1f5ff',// red
-      },
-      {
-        label: 'Part 8',
-        data: [1],
-        backgroundColor: '#d1f5ff',// red
-      },
-      {
-        label: 'Part 9',
-        data: [1],
-        backgroundColor: '#d1f5ff',// red
-      },
-      {
-        label: 'Part 10',
-        data: [1],
-        backgroundColor: '#d1f5ff',// red
-      },
-      {
-        label: 'Part 11',
-        data: [1],
-        backgroundColor: '#5cc9e8',// yellow
-      },
-      {
-        label: 'Part 12',
-        data: [1],
-        backgroundColor: '#3d99d2',// green
-      },
-      {
-        label: 'Part 13',
-        data: [1],
-        backgroundColor: '#3d99d2',// green
-      },
-      {
-        label: 'Part 14',
-        data: [1],
-        backgroundColor: '#3d99d2',// green
-      },
-      {
-        label: 'Part 15',
-        data: [1],
-        backgroundColor: '#5cc9e8',// yellow
-      },
-
-      {
-        label: 'Part 16',
-        data: [1],
-        backgroundColor: '#d1f5ff',// red
-      },
-      {
-        label: 'Part 17',
-        data: [1],
-        backgroundColor: '#d1f5ff',// red
-      },
-      {
-        label: 'Part 18',
-        data: [1],
-        backgroundColor: '#d1f5ff',// red
-      },
-      {
-        label: 'Part 19',
-        data: [1],
-        backgroundColor: '#d1f5ff',// red
-      },
-      {
-        label: 'Part 20',
-        data: [1],
-        backgroundColor: '#d1f5ff',// red
-      },
-      {
-        label: 'Part 21',
-        data: [1],
-        backgroundColor: '#d1f5ff',// red
-      },
-      {
-        label: 'Part 22',
-        data: [1],
-        backgroundColor: '#d1f5ff',// red
-      },
-      {
-        label: 'Part 23',
-        data: [1],
-        backgroundColor: '#5cc9e8',// yellow
-      },
-      {
-        label: 'Part 24',
-        data: [1],
-        backgroundColor: '#3d99d2',// green
-      },
-
-
+      { label: 'Part 1',  data: [1], backgroundColor: '#5cc9e8' },
+      { label: 'Part 2',  data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 3',  data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 4',  data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 5',  data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 6',  data: [1], backgroundColor: '#5cc9e8' },
+      { label: 'Part 7',  data: [1], backgroundColor: '#3d99d2' },
+      { label: 'Part 8',  data: [1], backgroundColor: '#3d99d2' },
+      { label: 'Part 9',  data: [1], backgroundColor: '#3d99d2' },
+      { label: 'Part 10', data: [1], backgroundColor: '#3d99d2' },
+      { label: 'Part 11', data: [1], backgroundColor: '#5cc9e8' },
+      { label: 'Part 12', data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 13', data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 14', data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 15', data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 16', data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 17', data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 18', data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 19', data: [1], backgroundColor: '#5cc9e8' },
+      { label: 'Part 20', data: [1], backgroundColor: '#3d99d2' },
+      { label: 'Part 21', data: [1], backgroundColor: '#3d99d2' },
+      { label: 'Part 22', data: [1], backgroundColor: '#3d99d2' },
+      { label: 'Part 23', data: [1], backgroundColor: '#3d99d2' }
     ],
   },
   options: {
     indexAxis: 'y',
-    layout: {
-      padding: 40,
-    },
+    layout: { padding: 40 },
     scales: {
       x: {
         stacked: true,
         ticks: {
           display: true,
           stepSize: 1,
-          minRotation: 0, // ⬅️ rotate labels vertically
+          color: 'transparent',       // ✅ red tick labels
+          font: {
+            size: 32,         // ✅ large font
+            weight: 'normal',
+          },
+          minRotation: 0,
           maxRotation: 0,
         },
         grid: {
@@ -155,79 +56,158 @@
       },
     },
     plugins: {
-      legend: {
-        display: false,
+      legend: { display: false },
+      datalabels: {
+        color: 'transparent',
+        font: { size: 14, weight: 'normal' },
+        formatter: function (value, context) {
+          return context.dataset.label;
+        }
       },
       annotation: {
         clip: false,
         annotations: {
-          
-          
-          arrow: {
+
+          /*
+          label1: {
+            type: 'label',
+            xValue: 7.54,
+            yAdjust: -35,
+            content: ['7:30\n1.32 m'],
+            font: { size: 16, weight: 'normal' },
+          },
+          */
+          /*
+          verticalLine: {
+            type: 'line',
+            xMin: 7.54,
+            xMax: 7.54,
+            yMin: -0.43,
+            yMax: 0.4,
+            borderColor: 'red',
+            borderWidth: 2,
+            borderDash: [8, 6],
+          },
+          */
+            arrow: {
             type: 'point',
             pointStyle: 'triangle',
             backgroundColor: 'red',
             borderColor: 'white',
-            borderWidth: 2,
-            radius: 7,
-            xValue: 7,
-            yAdjust: 25,
+            borderWidth: 4,
+            radius: 20,
+            xValue: 7.54,
+            yAdjust: -7,
             rotation: 180,
           },
-          label1: {
-            type: 'label',
-            xValue: 7,
-            yAdjust: -10,
-            content: ['7:30\n1.32 m'],
-            font: {
-              size: 12,
-              weight: 'bold',
-            },
-          },
-          verticalLine: {
-            type: 'line',
-            xMin: 7,
-            xMax: 7,
-            borderColor: 'red',
-            borderWidth: 1,
-            borderDash: [4, 4],
-          },
           
           
-/*           arrow2: {
-            type: 'point',
-         //   pointStyle: 'triangle',
-            backgroundColor: 'red',
-            borderColor: 'white',
-            borderWidth: 3,
-            radius: 5,
-            xValue: 10.5,
-            yAdjust: 45,
-            rotation: 180,
-          },
-*/          label2: {
-            type: 'label',
-            xValue: 10.5,
-            yAdjust: 100,
-            content: ['10:26\n5.00 m'],
-            font: {
-              size: 12,
-            //  weight: 'bold',
-            },
-          },
-          verticalLine2: {
-            type: 'line',
-            xMin: 10.5,
-            xMax: 10.5,
-            borderColor: 'blue',
-            borderWidth: 1,
-            borderDash: [4, 4],
-          },         
-          
-          
+// TIDE PEAKS LABELS AND LINES
+// PEAK 1
+label01: {
+type: 'label',
+xValue: 3.09,
+xAdjust: 15,
+yAdjust: 107,
+content: [' Low\n03:09\n0.82 m'],
+color: 'grey',
+font: {
+size: 32,
+// weight: 'bold',
+},
+},
+verticalLine01: {
+type: 'line',
+xMin: 3.09,
+xMax: 3.09,
+yMin: -0.43,
+yMax: 0.4,
+borderColor: 'grey', //'rgb(43,102,144)',
+borderWidth: 2,
+borderDash: [8, 6],
+},
+
+
+// PEAK 2
+label02: {
+type: 'label',
+xValue: 8.06,
+xAdjust: 15,
+yAdjust: 107,
+content: [' High\n08:06\n5.19 m'],
+color: 'rgb(43,102,144)',//'grey',
+font: {
+size: 32,
+// weight: 'bold',
+},
+},
+verticalLine02: {
+type: 'line',
+xMin: 8.06,
+xMax: 8.06,
+yMin: -0.43,
+yMax: 0.4,
+borderColor: 'grey', //'rgb(43,102,144)',
+borderWidth: 2,
+borderDash: [8, 6],
+},
+
+
+// PEAK 3
+label03: {
+type: 'label',
+xValue: 15.21,
+xAdjust: 15,
+yAdjust: 107,
+content: [' Low\n15:21\n0.73 m'],
+color: 'grey',
+font: {
+size: 32,
+// weight: 'bold',
+},
+},
+verticalLine03: {
+type: 'line',
+xMin: 15.21,
+xMax: 15.21,
+yMin: -0.43,
+yMax: 0.4,
+borderColor: 'grey', //'rgb(43,102,144)',
+borderWidth: 2,
+borderDash: [8, 6],
+},
+
+
+// PEAK 4
+label04: {
+type: 'label',
+xValue: 21.16,
+xAdjust: 15,
+yAdjust: 107,
+content: [' High\n21:16\n4.89 m'],
+color: 'rgb(43,102,144)',//'grey',
+font: {
+size: 32,
+
+// weight: 'bold',
+},
+},
+verticalLine04: {
+type: 'line',
+xMin: 21.16,
+xMax: 21.16,
+yMin: -0.43,
+yMax: 0.4,
+borderColor: 'grey', //'rgb(43,102,144)',
+borderWidth: 3,
+borderDash: [8, 6],
+},
+
           
         },
       },
     },
   },
+  
+  
 }
