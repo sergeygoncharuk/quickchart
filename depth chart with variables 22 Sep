@@ -1,0 +1,214 @@
+{
+  
+// N8N VARIABLES
+// now000Tide
+// now000Hour
+// now000DecimalHour
+// now000DateMonthYear
+// now000Time
+// tide000NowExact
+// tide000AllPeaksString
+// tide000Colors
+
+// TEST
+// nowTide
+// nowHour
+// nowDecimalHour
+// nowDateMonthYear
+// nowTime
+// tideNowExact
+/* tideAllPeaksString */
+/* tideColors */
+  
+  type: 'bar',
+  data: {
+    labels: [''],
+    
+// backgroundColor: '#3d99d2' // if Tide is >= 3.50 m
+// ackgroundColor: '#5cc9e8' // if Tide is < 3.50 m and >=1.5 m
+// backgroundColor: '#d1f5ff' // if Tide is < 1,50 m
+
+// VARIABLES /////////////////////////////////
+// tide000Colors
+tideColors
+/*
+    datasets: [
+      { label: 'Part 1',  data: [1], backgroundColor: '#5cc9e8' },
+      { label: 'Part 2',  data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 3',  data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 4',  data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 5',  data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 6',  data: [1], backgroundColor: '#5cc9e8' },
+      { label: 'Part 7',  data: [1], backgroundColor: '#3d99d2' },
+      { label: 'Part 8',  data: [1], backgroundColor: '#3d99d2' },
+      { label: 'Part 9',  data: [1], backgroundColor: '#3d99d2' },
+      { label: 'Part 10', data: [1], backgroundColor: '#3d99d2' },
+      { label: 'Part 11', data: [1], backgroundColor: '#5cc9e8' },
+      { label: 'Part 12', data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 13', data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 14', data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 15', data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 16', data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 17', data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 18', data: [1], backgroundColor: '#d1f5ff' },
+      { label: 'Part 19', data: [1], backgroundColor: '#5cc9e8' },
+      { label: 'Part 20', data: [1], backgroundColor: '#3d99d2' },
+      { label: 'Part 21', data: [1], backgroundColor: '#3d99d2' },
+      { label: 'Part 22', data: [1], backgroundColor: '#3d99d2' },
+      { label: 'Part 23', data: [1], backgroundColor: '#3d99d2' }
+    ],
+*/
+
+  },
+  options: {
+    indexAxis: 'y',
+
+    layout: {
+      padding: {
+        left: 70, // OFFSET SETTINGS
+        right: 0,
+        top: 40,
+        bottom: 40,
+      },
+    },
+
+    scales: {
+      x: {
+        stacked: true,
+        ticks: {
+          display: true,
+          stepSize: 1,
+          color: 'transparent',
+          font: {
+            size: 32,         
+            weight: 'normal',
+            },
+          minRotation: 0,
+          maxRotation: 0,
+        },
+        grid: {
+          drawBorder: false,
+          display: false,
+        },
+      },
+      y: {
+        display: false,
+        stacked: true,
+      },
+    },
+    plugins: {
+      legend: { display: false },
+      datalabels: {
+        color: 'transparent',
+        font: { size: 14, weight: 'normal' },
+        formatter: function (value, context) {
+          return context.dataset.label;
+        }
+      },
+      annotation: {
+        clip: false,
+        annotations: {
+
+
+// VARIABLES /////////////////////////////////
+// tide000AllPeaksString
+
+tideAllPeaksString
+
+/*          
+// TIDE PEAKS LABELS AND LINES
+
+// PEAK 1
+label01: {
+  type: 'label',
+  xValue: 4.00, // PeakDateTime in hours format n.nn
+  xAdjust: 15,
+  yAdjust: 107,
+  content: [' Low\n04:00\n0.86 m'], // Trend, PeakDateTime hh:mm, Peak
+  color: 'grey',
+  font: {
+    size: 32,
+  },
+},
+verticalLine01: {
+  type: 'line',
+  xMin: 4.00, // PeakDateTime in hours format n.nn
+  xMax: 4.00, // PeakDateTime in hours format n.nn
+  yMin: -0.43,
+  yMax: 0.4,
+  borderColor: 'grey', //'rgb(43,102,144)',
+  borderWidth: 2,
+  borderDash: [8, 6],
+},
+
+// PEAK 2
+label02: {
+  type: 'label',
+  xValue: 9.42, // PeakDateTime in hours format n.nn
+  xAdjust: 15,
+  yAdjust: 107,
+  content: [' High\n09:25\n5.15 m'], // Trend, PeakDateTime hh:mm, Peak
+  color: 'rgb(43,102,144)',
+  font: {
+    size: 32,
+  },
+},
+verticalLine02: {
+  type: 'line',
+  xMin: 9.42, // PeakDateTime in hours format n.nn
+  xMax: 9.42, // PeakDateTime in hours format n.nn
+  yMin: -0.43,
+  yMax: 0.4,
+  borderColor: 'grey', //'rgb(43,102,144)',
+  borderWidth: 2,
+  borderDash: [8, 6],
+},
+
+// PEAK 3
+label03: {
+  type: 'label',
+  xValue: 16.18, // PeakDateTime in hours format n.nn
+  xAdjust: 15,
+  yAdjust: 107,
+  content: [' Low\n16:11\n0.77 m'], // Trend, PeakDateTime hh:mm, Peak
+  color: 'grey',
+  font: {
+    size: 32,
+  },
+},
+verticalLine03: {
+  type: 'line',
+  xMin: 16.18, // PeakDateTime in hours format n.nn
+  xMax: 16.18, // PeakDateTime in hours format n.nn
+  yMin: -0.43,
+  yMax: 0.4,
+  borderColor: 'grey', //'rgb(43,102,144)',
+  borderWidth: 2,
+  borderDash: [8, 6],
+},
+*/
+
+// RED TRIANGLE LABEL
+            arrow: {
+            type: 'point',
+            pointStyle: 'triangle',
+            backgroundColor: 'red',
+            borderColor: 'white',
+            borderWidth: 4,
+            radius: 20,
+// VARIABLES /////////////////////////////////
+// now000DecimalHour
+            xValue: nowDecimalHour,
+//          xValue: 7.91,
+            yAdjust: -7,
+            rotation: 180,
+          },
+
+          
+        },
+      },
+    },
+  },
+  
+  
+}
