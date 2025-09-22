@@ -2,6 +2,10 @@
   type: 'bar',
   data: {
     labels: [''],
+    
+// backgroundColor: '#3d99d2' //deep blue
+// ackgroundColor: '#5cc9e8' // blue
+// backgroundColor: '#d1f5ff' // light blue
     datasets: [
       { label: 'Part 1',  data: [1], backgroundColor: '#5cc9e8' },
       { label: 'Part 2',  data: [1], backgroundColor: '#d1f5ff' },
@@ -37,11 +41,11 @@
         ticks: {
           display: true,
           stepSize: 1,
-          color: 'transparent',       // ✅ red tick labels
+          color: 'transparent',
           font: {
-            size: 32,         // ✅ large font
+            size: 32,         
             weight: 'normal',
-          },
+            },
           minRotation: 0,
           maxRotation: 0,
         },
@@ -68,27 +72,6 @@
         clip: false,
         annotations: {
 
-          /*
-          label1: {
-            type: 'label',
-            xValue: 7.54,
-            yAdjust: -35,
-            content: ['7:30\n1.32 m'],
-            font: { size: 16, weight: 'normal' },
-          },
-          */
-          /*
-          verticalLine: {
-            type: 'line',
-            xMin: 7.54,
-            xMax: 7.54,
-            yMin: -0.43,
-            yMax: 0.4,
-            borderColor: 'red',
-            borderWidth: 2,
-            borderDash: [8, 6],
-          },
-          */
             arrow: {
             type: 'point',
             pointStyle: 'triangle',
@@ -96,7 +79,7 @@
             borderColor: 'white',
             borderWidth: 4,
             radius: 20,
-            xValue: 7.54,
+            xValue: 7.91,
             yAdjust: -7,
             rotation: 180,
           },
@@ -106,7 +89,7 @@
 // PEAK 1
 label01: {
 type: 'label',
-xValue: 3.09,
+xValue: 3.15,
 xAdjust: 15,
 yAdjust: 107,
 content: [' Low\n03:09\n0.82 m'],
@@ -118,8 +101,8 @@ size: 32,
 },
 verticalLine01: {
 type: 'line',
-xMin: 3.09,
-xMax: 3.09,
+xMin: 3.15,
+xMax: 3.15,
 yMin: -0.43,
 yMax: 0.4,
 borderColor: 'grey', //'rgb(43,102,144)',
@@ -131,7 +114,7 @@ borderDash: [8, 6],
 // PEAK 2
 label02: {
 type: 'label',
-xValue: 8.06,
+xValue: 8.10,
 xAdjust: 15,
 yAdjust: 107,
 content: [' High\n08:06\n5.19 m'],
@@ -143,8 +126,8 @@ size: 32,
 },
 verticalLine02: {
 type: 'line',
-xMin: 8.06,
-xMax: 8.06,
+xMin: 8.10,
+xMax: 8.10,
 yMin: -0.43,
 yMax: 0.4,
 borderColor: 'grey', //'rgb(43,102,144)',
@@ -156,7 +139,7 @@ borderDash: [8, 6],
 // PEAK 3
 label03: {
 type: 'label',
-xValue: 15.21,
+xValue: 15.35,
 xAdjust: 15,
 yAdjust: 107,
 content: [' Low\n15:21\n0.73 m'],
@@ -168,8 +151,8 @@ size: 32,
 },
 verticalLine03: {
 type: 'line',
-xMin: 15.21,
-xMax: 15.21,
+xMin: 15.35,
+xMax: 15.35,
 yMin: -0.43,
 yMax: 0.4,
 borderColor: 'grey', //'rgb(43,102,144)',
@@ -181,21 +164,20 @@ borderDash: [8, 6],
 // PEAK 4
 label04: {
 type: 'label',
-xValue: 21.16,
+xValue: 21.27,
 xAdjust: 15,
 yAdjust: 107,
 content: [' High\n21:16\n4.89 m'],
 color: 'rgb(43,102,144)',//'grey',
 font: {
 size: 32,
-
 // weight: 'bold',
 },
 },
 verticalLine04: {
 type: 'line',
-xMin: 21.16,
-xMax: 21.16,
+xMin: 21.27,
+xMax: 21.27,
 yMin: -0.43,
 yMax: 0.4,
 borderColor: 'grey', //'rgb(43,102,144)',
